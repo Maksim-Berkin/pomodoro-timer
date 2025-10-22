@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=EG+Garamond:wght@400;500;600;700&family=Fira+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <div class="particles" id="particles"></div>
+
+    <div class="app-container">
+        <h1>Pomodoro</h1>
+
+        <div class="session-type">
+            <div class="session-badge active" data-type="work">Work</div>
+            <div class="session-badge" data-type="short">Short Break</div>
+            <div class="session-badge" data-type="long">Long Break</div>
+        </div>
+
+        <div class="timer-circle">
+            <svg width="250" height="250" class="progress-ring">
+                <circle class="progress-ring-bg" cx="125" cy="125" r="115" fill="none" stroke-width="10" />
+                <circle class="progress-ring-fill" id="progress" cx="125" cy="125" r="115" fill="none" stroke-width="10"
+                    stroke-dasharray="722.57" stroke-dashoffset="0" />
+            </svg>
+            <div class="timer-display">
+                <div class="time" id="time">25:00</div>
+                <div class="session-info" id="sessionInfo">Ready to focus</div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="btn primary" id="startBtn">Start</button>
+            <button class="btn" id="pauseBtn" style="display:none">Pause</button>
+            <button class="btn" id="resetBtn">Reset</button>
+            <button class="btn" id="skipBtn">Skip</button>
+        </div>
+
+        <div class="bottom-sections">
+            <div class="stats">
+                <div class="stats-title">Today's Progress</div>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-value" id="completedSessions">0</div>
+                        <div class="stat-label">Sessions</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="focusTime">0</div>
+                        <div class="stat-label">Minutes Focused</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="currentStreak">0</div>
+                        <div class="stat-label">Current Streak</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="totalBreaks">0</div>
+                        <div class="stat-label">Breaks Taken</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="settings">
+                <div class="setting-item">
+                    <span class="setting-label">Work Duration (min)</span>
+                    <div class="setting-input">
+                        <input type="number" class="input-number" id="workDuration" value="25" min="1" max="60">
+                    </div>
+                </div>
+                <div class="setting-item">
+                    <span class="setting-label">Short Break (min)</span>
+                    <div class="setting-input">
+                        <input type="number" class="input-number" id="shortBreak" value="5" min="1" max="30">
+                    </div>
+                </div>
+                <div class="setting-item">
+                    <span class="setting-label">Long Break (min)</span>
+                    <div class="setting-input">
+                        <input type="number" class="input-number" id="longBreak" value="15" min="1" max="60">
+                    </div>
+                </div>
+                <div class="setting-item">
+                    <span class="setting-label">Sound Notifications</span>
+                    <label class="toggle">
+                        <input type="checkbox" id="soundToggle" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <span class="setting-label">Auto-start Breaks</span>
+                    <label class="toggle">
+                        <input type="checkbox" id="autoStartToggle">
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="app.js"></script>
+
+</html>
