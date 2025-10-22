@@ -14,13 +14,16 @@ A modern Pomodoro timer
  - Statistics saved in localStorage
 
 🚀 Quick start
+
 1 - Clone the repository:
-    - git clone https://github.com/yourusername/pomodoro-timer.git
-    - cd pomodoro-timer
+- git clone https://github.com/yourusername/pomodoro-timer.git
+- cd pomodoro-timer
+
 2 - Open in your browser:
-    - open index.html
+- open index.html
+
 3 - Open your browser and go to the address
-    - http://localhost:8000
+- http://localhost:8000
 
 📁 Project structure
 ```
